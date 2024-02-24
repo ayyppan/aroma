@@ -1,0 +1,138 @@
+<!DOCTYPE  html>
+{% load static %}
+{% load myDecarator %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>file_1708172924666</title>
+<style>
+table{
+ border: 1px solid;
+ border-collapse: collapse;
+}
+th, td {
+  border: 1px solid;
+  padding:5px;
+  text-align: left;
+  border-collapse: collapse;
+}
+.sub {
+font-size: medium;
+line-height: 22px;
+color:blue;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-weight: bolder;
+}
+</style>
+ </head>
+<body>
+<p class="sub">
+<img src="{% static "myhome/aroma.jpg" %}" alt="Aromatic Coffe" width="500px"><br/>
+No 03, Ground floor, 17th cross, 11th Main road, Ragavendra layout, Near Rama Temple, K.G.Halli, Bangalore 560 015. 
+<br/>Email : info@aromaticcoffee.in, Mobile : 9731775504 Website : www.aromaticcoffee.in</p>
+<table class="table table-bordered">
+<tr style="height:5pt">
+<td colspan="8" style="text-align:center;font-weight:bold">GST INVOICE<td colspan="8" style="text-align:right;font-weight:bold">ORIGINAL FOR RECIPIENT</span></td>
+</tr>
+<tr style="height:5pt">
+<td colspan="2" style="font-weight:bold">GSTIN No.:</td>
+<td colspan="6">{{ GSTIN_NO }}</td>
+<td colspan="2" style="font-weight:bold">Po No:</td>
+<td colspan="2">{{ PO_NO }}</td>
+<td colspan="2" style="font-weight:bold">Date:</td>
+<td colspan="2">{{ PO_DATE }}</td>
+</tr>
+<tr style="height:5pt">
+<td colspan="2" style="font-weight:bold">Invoice No.</td>
+<td>ARO/{{ INVOICE_YEAR }}</td>
+<td>{{ INVOICE_SEQ }}</td>
+<td style="font-weight:bold">Inv Date :</td>
+<td colspan="3">{{ INVOICE_DATE }}</td>
+<td colspan="2" style="font-weight:bold">State</td>
+<td colspan="2">{{ STATE }}</td>
+<td colspan="2" style="font-weight:bold">State Code :</td>
+<td colspan="2">{{STATE_CODE }}</td>
+</tr>
+<tr style="height:5pt">
+<td colspan="8">Details of Receiver | Billed to: {{ Billed_STATE|lower' }}</td>
+<td colspan="4" style="font-weight:bold">Contact Person:</td>
+<td colspan="4">{{ CONTACT_PERSON }}</td></tr>
+<tr style="height:5pt">
+<td colspan="2" style="font-weight:bold">Name</td>
+<td colspan="6">{{ ORG_NAME }}</td>
+<td colspan="8" style="font-weight:bold">Bank Details</td>
+</tr>
+<tr style="height:5pt">
+<td colspan="2" style="font-weight:bold">Address</td>
+<td colspan="6">{{ ADDR1 }}<br/>{{ ADDR2 }}<br/>{{ ADDR3 }}<br/>{{ ADDR4 }}</td>
+<td colspan="8" rowspan="3">{{ ACCOUNT_BANK }} - {{ ACCOUNT_BRANCH}}<br/>A/C. Name: {{ ACCOUNT_NAME }}<br/>ACCOUNT {{ ACCOUNT_NO }}<br/>IFSC Code: {{ ACCOUNT_IFSC }}<br/>Branch : {{ ACCOUNT_BRANCH }}</td>
+</tr>
+<tr style="height:5pt">
+<td colspan="2" style="font-weight:bold">GSTIN</td>
+<td colspan="6">{{ GSTIN_NUM }}</td>
+</tr>
+<tr style="height:5pt">
+<td colspan="2" style="font-weight:bold">State</td>
+<td colspan="2">KARNATAKA</td>
+<td colspan="2" style="font-weight:bold">State Code :</td>
+<td colspan="2">{{STATE_CODE}}</td>
+</tr>
+<tr style="height:5pt">
+<td colspan="4" rowspan="2" style="font-weight:bold">Name of Product / Service</td>
+<td rowspan="2" style="font-weight:bold">HSN ACS</td>
+<td colspan="2" rowspan="2" style="font-weight:bold">Qty</td>
+<td rowspan="2" style="font-weight:bold">Rate</td>
+<td rowspan="2" style="font-weight:bold">TaxableValue</td>
+<td colspan="2" style="font-weight:bold" style="font-weight:bold">CGST</td>
+<td colspan="2" style="font-weight:bold">SGST</td>
+<td colspan="2" style="font-weight:bold">IGST</td>
+<td rowspan="2" style="font-weight:bold">Total</td>
+</tr>
+<tr style="height:5pt">
+<td style="font-weight:bold">Rate</td>
+<td style="font-weight:bold">Amount</td>
+<td style="font-weight:bold">Rate</td>
+<td style="font-weight:bold">Amount</td>
+<td style="font-weight:bold">Rate</td>
+<td style="font-weight:bold">Amount</td></tr>
+<tr style="height:5pt">
+<td colspan="4">{{ ITEM1 }}</td>
+<td>{{ HSNACS1 }}</td>
+<td colspan="2">{{ QTY1 }}  {{ UNIT_TYPE }}</td>
+<td>{{ ITEM1_RATE }}</td>
+<td>{{ ITEM1_TAX_VALUABLE }}</td>
+<td>{{ ITEM1_CGST_RATE }}</td>
+<td>{{ ITEM1_CGST_AMOUNT }}</td>
+<td>{{ ITEM1_SGST_RATE }}</td>
+<td>{{ ITEM1_SGST_AMOUNT }}</td>
+<td>{{ ITEM1_IGST_RATE }}</td>
+<td>{{ ITEM1_IGST_AMOUNT }}</td>
+<td>{{ ITEM1_TOTAL }}</td></tr>
+<tr style="height:5pt">
+<td colspan="9" rowspan="3">{{ DC_NO }}</td>
+<td colspan="5" style="font-weight:bold">Total Amount</td>
+<td colspan="2">{{ TOTAL_WITHOUT_TAX }}</td>
+</tr>
+<tr style="height:5pt">
+<td colspan="5">Add : CGST</td>
+<td colspan="2">{{ CGST_TOTAL }}</td>
+</tr>
+<tr style="height:13pt">
+<td colspan="5">Add : SGST</td>
+<td colspan="2">{{ SGST_TOTAL }}</td>
+</tr>
+<tr style="height:5pt">
+<td colspan="9" rowspan="3">We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct.</td>
+<td colspan="5">Add : IGST</td>
+<td  colspan="2">{{ IGST_TOTAL }}</td>
+</tr><tr style="height:5pt">
+<td colspan="5">Tax Amount : GST</td>
+<td colspan="2">{{ TOTAL_TAX }}</td></tr>
+<tr style="height:5pt">
+<td colspan="5" style="font-weight:bold">Total Amount + Tax</td>
+<td colspan="2">{{ TOTAL_WITH_TAX }}</td>
+</tr>
+<tr style="height:35pt">
+<td colspan="9">Payment Terms :</td>
+<td colspan="7" style="text-align:center">{{ ORG_NAME }}
+<br/>
+<br/><br/><br/><br/><br/>Authorized Signatory</td></tr>
+</table></body></html>

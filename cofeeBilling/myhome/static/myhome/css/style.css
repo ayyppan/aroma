@@ -1,0 +1,23 @@
+table
+{
+    border: 1px solid blue;
+    padding: 1px;
+    border-collapse: collapse;
+}
+th,td
+{
+    border: 2px solid blue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size : 15px;
+    line-height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.sub{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size : 15px;
+    line-height: 20px;
+    font-style: oblique;
+    font-weight: bolder;
+    color:brown;
+}

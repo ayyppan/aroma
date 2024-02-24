@@ -1,0 +1,8 @@
+{% extends "myhome/base.html" %}
+{% block body_block %}
+<form method="post" class=".container-fluid p-2">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" class="btn btn-primary" value="Generate">
+</form>
+{% endblock %}

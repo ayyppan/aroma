@@ -1,0 +1,30 @@
+{% extends "myhome/base.html" %}
+{% load static %}
+{% block body_block %}
+    <div class=".container-fluid p-2">
+    {% if service_entry %}
+        <table>
+        <thead>
+            <th>Part Number</th>
+            <th>HSN Code</th>
+            <th>Service Name</th>
+            <th>CGST</th>
+            <th>SGST</th>
+        </thead>
+        {% for serv in service_entry %}
+        <tr style="height:35pt">
+                <td>{{ serv.part_number }}</td>
+                <td>{{ serv.hsn_code }}</td>
+                <td>{{ serv.service_name }}</td>
+                <td>{{ serv.cgst_val }}</td>
+                <td>{{ serv.sgst_val }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <table>
+            <tr><th>There is no data available for display!!</th></tr>
+        </table>
+    {% endif %}
+</div>
+{% endblock %}

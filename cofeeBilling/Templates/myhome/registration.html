@@ -1,0 +1,18 @@
+{% extends "myhome/base.html" %}
+{% block body_block %}
+<div class=".container-fluid p-2">
+    {% if registered %}
+    <h1>Thankyou for registering!</h1>
+    {% else %}
+    <h1>Please register here!!</h1>
+    <h2>Fillout the form!</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <input type="submit" value="Register" name="">
+        </form>
+    {% endif %}
+</div>
+
+{% endblock %}
